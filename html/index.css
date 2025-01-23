@@ -1,0 +1,83 @@
+@media screen and (max-width: 1023px) {
+    body {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+ 
+}
+
+.customULStyle {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.customULStyle > li {
+    display: inline;    
+}
+
+.contentFontSize > li {
+    margin-bottom: 20px;
+}
+
+.contentFontSize {
+    font-size-adjust: 0.6;
+}
+
+.navDisplay {
+    display: inline;
+}
+
+.vSpacerBig {
+    margin-bottom: 50px;
+}
+
+.container {
+    display: grid;
+    /* grid-template-columns: auto auto auto;
+    background-color: dodgerblue; */
+    padding: 10px;
+}
+
+.container > div {
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+input[type=text],input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
