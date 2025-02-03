@@ -143,13 +143,27 @@ const updateTask = (index) => {
 const changeSelection = () => {
     let filter = document.getElementById("sel-task-filter" ).value;
     let tempTaskRecords = JSON.parse(localStorage.getItem("taskRecords"));
+    let tempTaskRecordsWithId = [];
+
+    tempTaskRecords.forEach(function(obj, index)  {
+        // include an id to the object to resolve issue on index changing during filter
+        tempTaskRecordsWithId.push(
+            {
+                id: index,
+                title: obj.title,
+                description: obj.description,
+                status: obj.status,
+                taskDate: obj.taskDate
+            }
+        );
+    });    
 
     var filteredTask;
 
     if(filter === "completed") {
-        filteredTask = tempTaskRecords.filter(filterCompleted);
+        filteredTask = tempTaskRecordsWithId.filter(filterCompleted);
     } else if (filter === "incomplete") {
-        filteredTask = tempTaskRecords.filter(filterIncomplete);
+        filteredTask = tempTaskRecordsWithId.filter(filterIncomplete);
     } else {
         populateTable();
         return;
@@ -177,9 +191,9 @@ const changeSelection = () => {
             (taskDate.getMonth() + 1).toString().padStart(2, '0') + '-' + 
             taskDate.getDate().toString().padStart(2, '0') +'</td> ' +
         '<td class="justify"> ' +
-        '    <button class="btn-edit-task" onclick="showEditTask(' + index + ')" >Edit</button> ' +
-        '    <button class="btn-delete-task" onclick="deleteTask('+ index +')">Delete</button> ' +
-        '    <button class="btn-complete-task" onclick="completeTask('+ index +')">Mark Complete</button> ' +
+        '    <button class="btn-edit-task" onclick="showEditTask(' + obj.id + ')" >Edit</button> ' +
+        '    <button class="btn-delete-task" onclick="deleteTask('+ obj.id +')">Delete</button> ' +
+        '    <button class="btn-complete-task" onclick="completeTask('+ obj.id +')">Mark Complete</button> ' +
         '</td> ' +
         '</tr> ';
     });
@@ -205,11 +219,13 @@ function performSearch() {
     let tempTaskRecordsWithId = [];
 
     tempTaskRecords.forEach(function(obj, index)  {
+        // include an id to the object to resolve issue on index changing during filter
         tempTaskRecordsWithId.push(
             {
                 id: index,
                 title: obj.title,
                 description: obj.description,
+                status: obj.status,
                 taskDate: obj.taskDate
             }
         );
