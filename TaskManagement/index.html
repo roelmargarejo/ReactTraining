@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Task Management</title>
+        <link rel="stylesheet" href="./index.css">
+        <script src="./script.js"></script>
+  
+    </head>
+    <body onload="populateTable()">
+        <center>
+            <h1>Javascript Application</h1>
+        </center>
+
+        <!-- This is for the Add Task -->
+        <form id="frm-add-task">
+            <h2>Add Task</h2> 
+            <div class="grid-container"> 
+                <div>               
+                    <label>Title</label>
+                    <input type="text"  id="txt-title" required />
+                </div>
+
+                <div>
+                    <label>Description</label>
+                    <textarea id="txt-description" required></textarea>
+                </div>
+
+                <div>
+                    <label>Date</label>
+                    <input type="date" id="txt-date" required />
+                </div>
+
+                <div>
+                    <button type="submit" id="btn-add-task" onclick="createTask()" >Add Task</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- This is for the edit task  -->
+        <form id="frm-edit-task">
+            <h2>Edit Task</h2> 
+            <div class="grid-container"> 
+                <div>               
+                    <label>Title</label>
+                    <input type="text"  id="txt-title-edit" />
+                </div>
+
+                <div>
+                    <label>Description</label>
+                    <textarea id="txt-description-edit"></textarea>
+                </div>
+
+                <div>
+                    <label>Date</label>
+                    <input type="date" id="txt-date-edit" />
+                </div>
+
+                <div>
+                    <button type="submit" id="btn-edit-task-record" onclick="updateTask()" >Update</button>
+                    <button type="button" id="btn-hide-edit-task" onclick="hidEditTask()" >Cancel</button> 
+                </div>
+            </div>
+        </form>        
+
+        <select id="sel-task-filter" onchange="changeSelection()">
+            <option value="all">All tasks</option>
+            <option value="completed">Completed tasks</option>
+            <option value="incomplete">Incomplete tasks</option>
+        </select>
+
+        <input id="txt-search" type="text" placeholder="Type your search here" oninput="performSearch()" />
+
+        <h2 id="h-tasklist">Task List</h2>
+
+        <table id="tbl-tasks">
+        </table>            
+        
+    </body>
+</html>
