@@ -252,6 +252,3 @@ function performSearch() {
 
     document.getElementById("tbl-tasks").innerHTML = recordsHTML;    
 }
-
-
-
