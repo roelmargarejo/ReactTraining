@@ -43,6 +43,7 @@ const createTask = () => {
     populateTable();
 }
 
+// this function is called after the page is loaded and after each update,delete and add record 
 const populateTable = () => {
     if (localStorage.getItem("taskRecords") !== null) {
         let recordsHTML = 
@@ -251,8 +252,6 @@ function performSearch() {
 
     document.getElementById("tbl-tasks").innerHTML = recordsHTML;    
 }
-
-populateTable();
 
 
 
