@@ -1,0 +1,174 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card {
+  box-shadow: 0px 0px 8px 1px #000000;
+  padding-top: 1px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  margin: 15px;
+  width: 180px;
+}
+
+.card-item {
+  box-shadow: 0px 0px 8px 1px #000000;
+  padding-bottom: 15px;
+  margin: 15px;
+  width: 300px;
+  display: inline-grid;
+}
+
+
+.card-full-width {
+  box-shadow: 0px 0px 8px 1px #000000;
+  padding-top: 1px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  min-height: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  background-color: #282c34;
+}
+
+.column {
+  float: left;
+}
+
+.column.side {
+  width: 250px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column.right {
+  width: 80%;
+  display:  inline-table;
+}
+
+.selected {
+  margin: 5px;
+}
+
+#searchByName {
+  width: 300px;
+  height: 30px;
+}
+
+#dv-search-by-name {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#searchByName {
+  margin-top: 5px;
+}
+
+#btn-search {
+  height: 35px;
+  width: 150px;
+}
+
+#dv-sorting {
+  margin-right: 30px;
+  float: right;
+}
+
+select {
+  width: 100px;
+  height: 35px;
+  margin-top: 20px;
+
+}
+
+@media screen and (max-width: 1249px) {
+  .column.side, .column.right {
+    width: 100%;
+  }
+
+  .column.right {
+    margin-left: 30px;
+   
+  }
+
+  .column.side {
+    margin-left: 20px;
+    
+  }
+
+  #dv-sorting {
+    width: 100%;
+    margin-top: 10px;
+    float: none;
+    display: inline;
+  }
+
+  .inline {
+    display: inline !important;
+  }
+
+  select {
+    width: 100px;
+    height: 35px;
+    margin-top: 15px;
+  
+  }
+
+}
+
+p.lightColor,h2.lightColor {
+  color: beige;
+  margin-left: 15px;
+}
